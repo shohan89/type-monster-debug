@@ -26,6 +26,7 @@ const typeController = (e) => {
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
+    errorCount++;
     return display.removeChild(display.lastChild);
   }
 
@@ -79,7 +80,6 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
-  console.log(errorCount);
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
