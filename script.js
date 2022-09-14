@@ -79,6 +79,7 @@ const gameOver = () => {
   display.innerHTML = "";
   // make it inactive
   display.classList.add("inactive");
+  console.log(errorCount);
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
@@ -87,7 +88,7 @@ const gameOver = () => {
     <button onclick="closeModal()">Close</button>
   `;
 
-  addHistory(questionText, timeTaken, errorCount);
+  addHistory(questionText, finalTimeTaken, errorCount);
 
   // restart everything
   startTime = null;
